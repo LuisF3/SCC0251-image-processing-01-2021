@@ -105,7 +105,9 @@ elif typ == 2:
     
     F_ = (np.abs(H_) / (np.abs(H) ** 2 + alf * np.abs(P) ** 2)) * G
     
-    resulting_img = np.fft.irfft2(F_)
+    f_ = np.fft.irfft2(F_)
+    f_ = np.clip(f_, 0, 255)
+    resulting_img = f_
 
 
 # In[8]:
